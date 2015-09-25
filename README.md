@@ -28,56 +28,49 @@ Second you need to place the new spoiler tag to your text:
 <div id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat, lectus eu venenatis facilisis, erat dolor venenatis magna, sit amet cursus lacus neque eget orci.[spoiler]Hi! This is an spoiler[/spoiler]
 Donec lorem dui, tristique nec urna ut, maximus interdum nunc. Ut eget imperdiet sapien. Sed egestas a quam eu vehicula. Aliquam lobortis magna dignissim orci faucibus, ut rhoncus ex ultricies.[spoiler]Hi! This is other spoiler[/spoiler]Cras nisi libero, ornare a feugiat vitae, maximus ac lacus. Fusce elementum turpis nec lorem mollis ornare ut ut risus. Morbi feugiat justo elit, vel vehicula enim tempor sit amet.</div>
 ```
-Text up will show as next: <br />
-
-And add an element with "onclick" event to launch the clean script (button, a, span...) in order to clean input and remove the highlights:
+Text above will show as next: <br />
+![Example](http://i.imgur.com/iF5vLIB.png?1)
+<br />
+If you don't want to use parse system, you can configure your custom style, positions etc and use spoiler(param1, param2) function I've created in the same library. This function must be attached to the element who expands the spoiler. Param1 is element who contract or expands the spoiler and param2 is the time required to finish animation. It's important the use of data-show attribute which points to the element id which contracts or expands; that's because could be more than one and there must be differenciate.
 ```html
-<input type="button" value="X" onclick="LMWebFinder.clean(document.getElementById('finder'));"> 
+<div class="spoiler">
+	<div class="show-button" data-show="spoiler0" onclick="spoiler(this, 350);">Handler of Spoiler</div>
+	<div id="spoiler0" class="spoiler-content">This is the text who will spoil</div>
+</div>
 ```
-Add an element with "onclick" event to launch the script (button, a, span...) taking the value of the input to send to the search function:
-```html
-<input type="button" value="Find Next" onclick="LMWebFinder.search(document.getElementById('finder').value);"> 
-```
-Finally you need to put all the content you want to search for inside an element (div, body, html...) with any ID:
-```html
-<div id="findIn"> 
-	/* Content to search for */ 
- 	<ul> 
-	 	<li>You</li> 
-		<li>Can</li> 
-		<li>Find</li> 
-		<li>In</li> 
-		<li>Lists</li> 
-	</ul>
-    <p>You can search in paragraphs also!</p> 
-    Obviusly you can search in plain text
-    <style>You cant find inside style, script, meta, title and link tags</style>
- </div>
- ```
  <br />
 #####Configuration
-As I said before you can customize colors from highlighted matches. You only need to change two variables to make this. Default colors are yellow (#FFFF00) for all matches and red (#FF0000) for focused match. Colors can be set in hexadecimal form or allowed web names for colors.<br />
-Change primary color:
+As I said before you can customize the parser. You can change the element who contains spoiler tags ("#content" by default), the text showed in handler ("Show hidden content" by default), the class used to style the entire spoiler("spoiler" by default) and the time that takes to open/close the spoiler (350 miliseconds by default).<br />
+Change element who contains spoiler tags (please use unique selector like ID, working in multielements):
 ```javascript
 <script>
-	LMWebFinder.primaryColor = "new primary color";
+	LMSpoiler.contentTag = "#newContent"; // (String), use css selectors
 </script>
 ```
-Change secondary color:
+Change handler text:
 ```javascript
 <script>
-	LMWebFinder.secondaryColor = "new secondary color";
+	LMSpoiler.customShowText = "New handler text";
 </script>
 ```
-Also you can change the element id in case you don't like the default one (findIn) or you have it already in use:
+Change main class used:
 ```javascript
 <script>
-	LMWebFinder.findId = "new ID";
+	LMSpoiler.customSpoilerClass = "myClass";
 </script>
 ```
-<br /> 
-There is an example for you to view how it works.<br /> 
-And you can see a live example in this blog: <a href="http://grenderg.github.io/blog/" target="_blank">GrenderG blog</a>.<br />
+Change time that takes to open/close:
+```javascript
+<script>
+	LMSpoiler.spoilerTime = 500; (miliseconds)
+</script>
+```
+####Changing style with CSS
+There is a CSS file you can explore to see how it works in the example but I want to make some clarifications about it. <br />
+First of all there is 3 sections: main section (.spoiler), handler section (.spoiler div:first-child) and content section (.spoiler div:last-child). I've made thinking in you can change class easyly since you just to write new class name into script (as I said above) and change the name in css.
+But don't worry about it because I'll make a tutorial in my website (legomolina.github.io) and I will explain this better (spanish).
+
+There is an example for you to view how it works in this repo.<br /> 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">LMWebFinder</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">legomolina</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
 =======
