@@ -2,7 +2,7 @@
 # LMWeb Finder (v1.3)
 
 ##### Introduction
-LMSpoiler is a little library which allows to you create a tipically spoiler in your webpage quickly.<br />With LMSpoiler you can customize the text to show, style and the time to open the hidden content.
+LMSpoiler is a little library which allows to you create a tipically spoiler in your webpage quickly with the integrated parser for custom tag ([spoiler][/spoiler]).<br />With LMSpoiler you can customize the text to show, style and the time to open the hidden content.
 
 ##### Installation
 <b>This library needs <a href="https://jquery.com/" target="_blank">Jquery</a> to use it.</b><br />
@@ -18,14 +18,15 @@ Also you need to create a little script into your html head to instantiate libra
 <script type="text/javascript">
 	window.onload = function() {
 		LMSpoiler = new LMSpoiler();
-		LMSpoiler.spoilerParser();
+		LMSpoiler.spoilerParser(); //Used for parse the custom tag [spoiler]. If you don't use it, this line can be ommited
 	};
 </script>
 ```
 <br />
-Second you need to create an element where you can write inside it (input, textarea...) and put an "onkeydown" event with element.value and event parameters to use it with "Enter" key:
+Second you need to add the spoiler new tag to your text:
 ```html
-<input type="text" id="finder" onkeydown="LMWebFinder.pressKey(this.value, event);">
+<div id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat, lectus eu venenatis facilisis, erat dolor venenatis magna, sit amet cursus lacus neque eget orci.[spoiler]Hi! This is an spoiler[/spoiler]
+Donec lorem dui, tristique nec urna ut, maximus interdum nunc. Ut eget imperdiet sapien. Sed egestas a quam eu vehicula. Aliquam lobortis magna dignissim orci faucibus, ut rhoncus ex ultricies.[spoiler]Hi! This is other spoiler[/spoiler]Cras nisi libero, ornare a feugiat vitae, maximus ac lacus. Fusce elementum turpis nec lorem mollis ornare ut ut risus. Morbi feugiat justo elit, vel vehicula enim tempor sit amet.</div>
 ```
 And add an element with "onclick" event to launch the clean script (button, a, span...) in order to clean input and remove the highlights:
 ```html
