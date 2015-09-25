@@ -23,11 +23,13 @@ Also you need to create a little script into your html head to instantiate libra
 </script>
 ```
 <br />
-Second you need to add the spoiler new tag to your text:
+Second you need to place the new spoiler tag to your text:
 ```html
 <div id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent placerat, lectus eu venenatis facilisis, erat dolor venenatis magna, sit amet cursus lacus neque eget orci.[spoiler]Hi! This is an spoiler[/spoiler]
 Donec lorem dui, tristique nec urna ut, maximus interdum nunc. Ut eget imperdiet sapien. Sed egestas a quam eu vehicula. Aliquam lobortis magna dignissim orci faucibus, ut rhoncus ex ultricies.[spoiler]Hi! This is other spoiler[/spoiler]Cras nisi libero, ornare a feugiat vitae, maximus ac lacus. Fusce elementum turpis nec lorem mollis ornare ut ut risus. Morbi feugiat justo elit, vel vehicula enim tempor sit amet.</div>
 ```
+Text up will show as next: <br />
+
 And add an element with "onclick" event to launch the clean script (button, a, span...) in order to clean input and remove the highlights:
 ```html
 <input type="button" value="X" onclick="LMWebFinder.clean(document.getElementById('finder'));"> 
