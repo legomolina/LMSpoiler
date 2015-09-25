@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# LMWeb Finder (v1.3)
+# LMSpoiler (v1.0)
 
 ##### Introduction
 LMSpoiler is a little library which allows to you create a tipically spoiler in your webpage quickly with the integrated parser for custom tag ([spoiler][/spoiler]).<br />With LMSpoiler you can customize the text to show, style and the time to open the hidden content.
@@ -73,6 +72,5 @@ But don't worry about it because I'll make a tutorial in my website (legomolina.
 There is an example for you to view how it works in this repo.<br /> 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">LMWebFinder</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">legomolina</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
-=======
 # LMSpoiler
 >>>>>>> 24c3914eecef32c8dbb11b07062a7caffa0ed73a
