@@ -1,7 +1,7 @@
 # LMSpoiler (v1.0)
 
 ##### Introduction
-LMSpoiler is a little library which allows to you create a tipically spoiler in your webpage quickly with the integrated parser for custom tag ([spoiler][/spoiler]).<br />With LMSpoiler you can customize the text to show, style and the time to open the hidden content.
+LMSpoiler is a little library which allows to you create a tipical spoiler in your webpage quickly with the integrated parser for custom tag ([spoiler][/spoiler]).<br />With LMSpoiler you can customize the text that is shown in the page, its style and the time that takes to open the hidden content.
 
 ##### Installation
 <b>This library needs <a href="https://jquery.com/" target="_blank">Jquery</a> to use it.</b><br />
@@ -30,7 +30,7 @@ Donec lorem dui, tristique nec urna ut, maximus interdum nunc. Ut eget imperdiet
 Text above will show as next: <br />
 ![Example](http://i.imgur.com/iF5vLIB.png?1)
 <br />
-If you don't want to use parse system, you can configure your custom style, positions etc and use spoiler(param1, param2) function I've created in the same library. This function must be attached to the element who expands the spoiler. Param1 is element who contract or expands the spoiler and param2 is the time required to finish animation. It's important the use of data-show attribute which points to the element id which contracts or expands; that's because could be more than one and there must be differenciate.
+If you don't want to use the parse system, you can configure your custom style, your positions and so on and use the spoiler(param1, param2) function I've created in the same library. This function must be attached to the element who expands the spoiler. Param1 is element who contract or expands the spoiler and param2 is the time required to finish the animation. It's important the use of the data-show attribute which points to the element id which contracts or expands; that's because could be more than one and they have to be differenciate.
 ```html
 <div class="spoiler">
 	<div class="show-button" data-show="spoiler0" onclick="spoiler(this, 350);">Handler of Spoiler</div>
@@ -40,7 +40,7 @@ If you don't want to use parse system, you can configure your custom style, posi
  <br />
 #####Configuration
 As I said before you can customize the parser. You can change the element who contains spoiler tags ("#content" by default), the text showed in handler ("Show hidden content" by default), the class used to style the entire spoiler("spoiler" by default) and the time that takes to open/close the spoiler (350 miliseconds by default).<br />
-Change element who contains spoiler tags (please use unique selector like ID, working in multielements):
+You can change the element which contains the spoiler tags (please use unique selector like ID,  WIP -> multielements):
 ```javascript
 <script>
 	LMSpoiler.contentTag = "#newContent"; // (String), use css selectors
@@ -66,7 +66,7 @@ Change time that takes to open/close:
 ```
 ####Changing style with CSS
 There is a CSS file you can explore to see how it works in the example but I want to make some clarifications about it. <br />
-First of all there is 3 sections: main section (.spoiler), handler section (.spoiler div:first-child) and content section (.spoiler div:last-child). I've made thinking in you can change class easyly since you just to write new class name into script (as I said above) and change the name in css.
+First of all there are 3 sections: main section (.spoiler), handler section (.spoiler div:first-child) and content section (.spoiler div:last-child). You can change the class easily because you only have to write the new class in the script (as I said above) and change the name in css.
 But don't worry about it because I'll make a tutorial in my website (legomolina.github.io) and I will explain this better (spanish).
 
 There is an example for you to view how it works in this repo.<br /> 
